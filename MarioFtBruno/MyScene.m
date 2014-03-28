@@ -133,16 +133,8 @@
     SKNode *node = [self nodeAtPoint:location];
     
     SKSpriteNode* nodo =(SKSpriteNode*)[self childNodeWithName:@"mario"];
-    if (nodo.position.x<0 )
-    {
-        nodo.position=CGPointMake(node.position.x-20,220);
- 
-    }
-    if (nodo.position.y<0 ) {
-        
-        nodo.position=CGPointMake(node.position.x,node.position.y+20);
-    }
-    else if ([node.name isEqualToString:@"rightButoon"]) {
+    
+    if ([node.name isEqualToString:@"rightButoon"]) {
         
         
         nodo.position=CGPointMake(nodo.position.x +4, nodo.position.y);
@@ -156,11 +148,13 @@
     else if ([node.name isEqualToString:@"jumpButton"]) {
         
         [self JumpingMario];
+        [self performSelector:@selector(jumpingDone) withObject:nil afterDelay:1];
     }
     else
     {
         
         [self JumpingMario];
+        [self performSelector:@selector(jumpingDone) withObject:nil afterDelay:1];
     
     }
 
@@ -168,11 +162,14 @@
 
 -(void) JumpingMario
 {
-    SKAction* resetTexture =[SKAction setTexture:[SKTexture textureWithImageNamed:@"mario_normal.png"]];
+    SKAction* resetTexture =[SKAction setTexture:[SKTexture textureWithImageNamed:@"mario_vuela1.png"]];
     SKSpriteNode* nodo =(SKSpriteNode*)[self childNodeWithName:@"mario"];
-    SKAction* jumpText =[SKAction setTexture:[SKTexture textureWithImageNamed:@"mario_salta.png"]];
+    nodo.size=CGSizeMake(35, 35);
+    //SKAction* jumpText =[SKAction setTexture:[SKTexture textureWithImageNamed:@"mario_salta.png"]];
+    SKAction* jumpText2 =[SKAction setTexture:[SKTexture textureWithImageNamed:@"mario_vuela1.png"]];
+    SKAction* jumpText3 =[SKAction setTexture:[SKTexture textureWithImageNamed:@"mario_vuela2.png"]];
     SKAction* wait =[SKAction waitForDuration:0.5];
-    jumpAnimation =[SKAction sequence:@[jumpText,wait,resetTexture]];
+    jumpAnimation =[SKAction sequence:@[jumpText2,jumpText3,wait,resetTexture]];
     [nodo runAction:jumpAnimation];
     
     SKAction* moveUp =[SKAction moveByX:0 y:35 duration:0.3];
@@ -184,6 +181,11 @@
     
 
 }
+-(void)jumpingDone{
+SKSpriteNode* mario=(SKSpriteNode*)[self childNodeWithName:@"mario"];
+    mario.size=CGSizeMake(25, 25);
+    
+}
 -(void)animateBird{
     [self initializeBird];
     [self performSelector:@selector(animateBird) withObject:nil afterDelay:0.3];
@@ -192,9 +194,25 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     
+    
+    //Validando que no se salga de la pantalla
     SKSpriteNode* mario=(SKSpriteNode*)[self childNodeWithName:@"mario"];
+    
+    if (mario.position.x<0 )
+    {
+        mario.position=CGPointMake(mario.position.x+10,mario.position.y);
+        
+    }
+    if (mario.position.y<0 ) {
+        
+        mario.position=CGPointMake(mario.position.x,mario.position.y);
+    }
 
+    
+    
+    //Movimiento del pajaro
     [self enumerateChildNodesWithName:@"bird" usingBlock:^(SKNode *node, BOOL *stop) {
+
         
         if (node.position.x<0 )
         {

@@ -35,6 +35,8 @@
 		587F641B18E4755C00DAF0CA /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 587F641A18E4755C00DAF0CA /* background.jpg */; };
 		587F642418E47BC000DAF0CA /* bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 587F642318E47BC000DAF0CA /* bird.atlas */; };
 		587F642618E47D3400DAF0CA /* Yellow_Bird_Wing_Down.png in Resources */ = {isa = PBXBuildFile; fileRef = 587F642518E47D3400DAF0CA /* Yellow_Bird_Wing_Down.png */; };
+		58D6CCA818E5F277003FC94F /* mario_vuela2.png in Resources */ = {isa = PBXBuildFile; fileRef = 58D6CCA618E5F277003FC94F /* mario_vuela2.png */; };
+		58D6CCA918E5F277003FC94F /* mario_vuela1.png in Resources */ = {isa = PBXBuildFile; fileRef = 58D6CCA718E5F277003FC94F /* mario_vuela1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		587F641A18E4755C00DAF0CA /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		587F642318E47BC000DAF0CA /* bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bird.atlas; sourceTree = "<group>"; };
 		587F642518E47D3400DAF0CA /* Yellow_Bird_Wing_Down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yellow_Bird_Wing_Down.png; path = bird.atlas/Yellow_Bird_Wing_Down.png; sourceTree = "<group>"; };
+		58D6CCA618E5F277003FC94F /* mario_vuela2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario_vuela2.png; sourceTree = "<group>"; };
+		58D6CCA718E5F277003FC94F /* mario_vuela1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario_vuela1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,8 @@
 		587F641C18E4756000DAF0CA /* Imagenes */ = {
 			isa = PBXGroup;
 			children = (
+				58D6CCA618E5F277003FC94F /* mario_vuela2.png */,
+				58D6CCA718E5F277003FC94F /* mario_vuela1.png */,
 				587F642518E47D3400DAF0CA /* Yellow_Bird_Wing_Down.png */,
 				581474FE18E48B4D004F34F8 /* button1.png */,
 				581474FF18E48B4D004F34F8 /* button2.png */,
@@ -287,9 +293,11 @@
 				587F642618E47D3400DAF0CA /* Yellow_Bird_Wing_Down.png in Resources */,
 				587F63F618E4744800DAF0CA /* Images.xcassets in Resources */,
 				587F641318E4754200DAF0CA /* mario_camina.atlas in Resources */,
+				58D6CCA918E5F277003FC94F /* mario_vuela1.png in Resources */,
 				587F641918E4755500DAF0CA /* mario_corre.png in Resources */,
 				587F63F418E4744800DAF0CA /* Spaceship.png in Resources */,
 				587F63EC18E4744800DAF0CA /* Main.storyboard in Resources */,
+				58D6CCA818E5F277003FC94F /* mario_vuela2.png in Resources */,
 				5814750318E48E4E004F34F8 /* background.png in Resources */,
 				587F642418E47BC000DAF0CA /* bird.atlas in Resources */,
 				5814750518E49075004F34F8 /* button3.png in Resources */,
